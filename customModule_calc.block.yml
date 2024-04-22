@@ -1,0 +1,37 @@
+id: customModule_calc
+label: calc
+category: '[customModule]'
+
+templates:
+  imports: from gnuradio import customModule
+  make: customModule.calc(${processing}, ${restart})
+
+parameters:
+- id: processing
+  label: Processing
+  dtype: bool
+  default: false
+
+- id: restart
+  label: Restart
+  dtype: bool
+  default: false
+
+inputs:
+- label: Received Bit Stream
+  dtype: byte
+
+- label: Control Bit Stream
+  dtype: byte
+
+outputs:
+- label: Number of Errors
+  dtype: float
+
+- label: BER Value
+  dtype: float
+
+- label: Total Number of Bits
+  dtype: float
+
+file_format: 1
