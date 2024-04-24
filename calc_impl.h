@@ -18,17 +18,16 @@ class calc_impl : public calc
 private:
     int errors;
     int total;
-    bool processing = false;
-    bool restart = false;
+    bool processing;
+    bool restart;
 
 public:
     calc_impl(bool processing = false, bool restart = false);
     ~calc_impl();
-   
-    void set_processing(bool new_processing); // Setter for processing
-    void set_restart(bool new_restart); // Setter for restart
 
-   
+    void set_processing(bool new_processing);
+    void set_restart(bool new_restart);
+    
     // Where all the action really happens
     int work(int noutput_items,
              gr_vector_const_void_star& input_items,

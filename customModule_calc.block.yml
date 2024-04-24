@@ -7,31 +7,30 @@ templates:
   make: customModule.calc(${processing}, ${restart})
 
 parameters:
-- id: processing
-  label: Processing
-  dtype: bool
-  default: false
+  - id: processing
+    label: 'Processing'
+    dtype: bool
+    default: False
+    callback: set_processing
 
-- id: restart
-  label: Restart
-  dtype: bool
-  default: false
+  - id: restart
+    label: 'Restart'
+    dtype: bool
+    default: False
+    callback: set_restart
 
 inputs:
-- label: Received Bit Stream
-  dtype: byte
-
-- label: Control Bit Stream
-  dtype: byte
+  - label: Received Bit Stream
+    dtype: byte
+  - label: Control Bit Stream
+    dtype: byte
 
 outputs:
-- label: Number of Errors
-  dtype: float
-
-- label: BER Value
-  dtype: float
-
-- label: Total Number of Bits
-  dtype: float
+  - label: Number of Errors
+    dtype: float
+  - label: BER Value
+    dtype: float
+  - label: Total Number of Bits
+    dtype: float
 
 file_format: 1
